@@ -18,7 +18,7 @@ const char * GetArch()
         return "aarch64";
 #elif defined __arm__ || defined _M_ARM
         return "arm";
-#elif defined __e2k__ || defined e2k
+#elif defined __e2k__ || defined E2K
 	return "e2k ( Elbrus )";
 #else
 	return "Unknown";
@@ -75,7 +75,6 @@ const char * GetGame()
 		{		
 			if ( !Q_strcasecmp( control->GetName(), "game" ) )
 			{
-
 				var = control->GetString();
 			}
 		}
