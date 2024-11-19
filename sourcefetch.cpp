@@ -29,9 +29,8 @@ const char * GetProtoVersion()
 {
 
 #if defined CSTRIKE15 || defined SWARM_DLL
-	return "Source Engine (Alien Swarm Branch)"
-#endif 
-
+	return "Source Engine (Left 4 Dead Branch)"
+#else
 	if ( PROTOCOL_VERSION == 25 )
 	{
 		return "Source Engine 25 / 1.17 (nillerusr's fork)";
@@ -40,6 +39,7 @@ const char * GetProtoVersion()
 	{
 		return "Source Engine 24 / Steam Original Engine";
 	}
+#endif
 }
 
 const char * GetPlatform()
@@ -82,8 +82,6 @@ const char * GetGame()
 	}
 	return var;
 }
-
-ConVarRef cl_name("cl_name");
 
 CON_COMMAND_F( sourcefetch, "Print info about engine", FCVAR_NONE )
 {
